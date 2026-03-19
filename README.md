@@ -1,6 +1,6 @@
-# ✨ Fountain Particle System
+# ✨ Advanced Particle Physics Engine with Realistic Lighting
 
-> A beautiful, real-time 3D particle fountain with physics simulation and realistic lighting
+> A sophisticated 2D particle system simulation built with Python and Pygame, featuring realistic physics, dynamic lighting, and beautiful visual design.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python)
 ![Pygame](https://img.shields.io/badge/Pygame-2.6.1-green?style=flat-square)
@@ -12,27 +12,43 @@
 ## ✨ Features
 
 ### 🎨 Visual Effects
-- **Realistic Particle Fountain** - Water-like particles spraying upward from a stone basin
-- **Advanced Lighting System** - Real light source with inverse square law physics
-- **Volumetric Rays** - Crepuscular (god) rays for atmospheric effects
-- **Dynamic Shadows** - Real-time shadow casting based on light position and particle distance
-- **Color Gradients** - Smooth color transitions and fading effects
+- **Beautiful Sky Background** - Gradient sky with procedurally generated clouds
+- **Realistic Particle Fountain** - Particles fountain from a fixed basin at the bottom
+- **Advanced Lighting System** - Fixed light source at top with inverse square law physics
+- **Dynamic Shadows** - Real-time shadow casting based on light position
+- **Color Gradients** - Smooth particle color transitions and fading (Red, Blue, Green, Purple, Orange)
 - **Particle Trails** - Motion trails showing particle trajectories
+- **Glow Effects** - Particles emit subtle light halos
 
 ### 🔬 Physics Simulation
-- **Gravity** - Realistic downward acceleration
-- **Air Resistance** - Drag force affecting particle motion
-- **Terminal Velocity** - Speed cap to prevent unrealistic acceleration
-- **Collision Physics** - Realistic bouncing with energy loss
-- **Fountain Mechanics** - Particles shoot upward at realistic angles
-- **Particle-to-Particle Interaction** - Subtle gravity wells between particles
+- **Gravity** - Realistic downward acceleration (0.15 m/frame²)
+- **Air Resistance** - Drag force affecting particle motion (0.995 factor)
+- **Terminal Velocity** - Speed cap at 20 pixels/frame to prevent unrealistic acceleration
+- **Collision Physics** - Realistic bouncing with energy loss (0.85 damping)
+- **Fountain Mechanics** - Particles spray upward at realistic angles from fountain
+- **Particle-to-Particle Interaction** - Subtle gravity wells between nearby particles
+- **Floor Friction** - Velocity loss when particles slide on floor (0.95)
 
 ### 💡 Lighting & Rendering
-- **Inverse Square Law** - Proper light attenuation over distance
+- **Inverse Square Law** - Proper light attenuation: intensity = 1 / (1 + (distance/100)²)
 - **Color-Aware Lighting** - Particles brighten based on proximity to light source
-- **Soft Shadows** - Multi-layer shadow rendering for realism
-- **Gradient Background** - Smooth atmospheric gradient
-- **Bloom Effects** - Light source with realistic glow
+- **Soft Shadows** - Multi-layer shadow rendering for realistic depth
+- **Bright Fountain Area** - Enhanced floor lighting around fountain
+- **Light Source Bloom** - Realistic light core with glow layers
+
+### 🎮 Interactive Controls
+- **Click to Create Bursts** - Left-click to spawn particle bursts at cursor
+- **Speed Adjustment** - Real-time animation speed control (0.1x to 5.0x)
+- **Pause/Resume** - Freeze simulation with SPACE key
+- **Info Toggle** - Show/hide on-screen statistics
+- **Clear Particles** - Remove all particles instantly
+
+### 🏗️ Software Architecture
+- **Layered Design** - Configuration, Utility, Domain, Presentation, Application layers
+- **Separation of Concerns** - Physics, Lighting, and Rendering engines are independent
+- **Static Utility Methods** - Pure functions for physics calculations
+- **Easy to Extend** - Add features without breaking existing code
+- **Configurable** - All magic numbers centralized in Config class
 
 ---
 
@@ -42,11 +58,10 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Controls](#controls)
-- [Project Structure](#project-structure)
+- [Architecture](#architecture)
+- [Customization](#customization)
 - [Requirements](#requirements)
 - [License](#license)
-
----
 
 ## 💻 Installation
 
